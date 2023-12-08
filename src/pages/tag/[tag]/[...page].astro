@@ -1,0 +1,90 @@
+---
+import { getCollection } from "astro:content";
+import { Pagination } from "accessible-astro-components";
+import Card from "../../../components/base/Card.astro";
+import Header from "../../../components/base/Header.astro";
+import BaseHead from "../../../components/base/BaseHead.astro";
+import Footer from "../../../components/base/Footer.astro";
+
+export async function getStaticPaths({ paginate }) {
+  const allPosts = await getCollection("blog");
+
+  const allTags = [...new Set(allPosts.flatMap((post) => post.data.tags))];
+
+  return allTags.flatMap((tag) => {
+    const filteredPosts = allPosts.filter((post) =>
+      post.data.tags.includes(tag)
+    );
+    return paginate(filteredPosts, {
+      params: { tag },
+      pageSize: 6,
+    });
+  });
+}
+
+const { page } = Astro.props;
+const { tag } = Astro.params;
+---
+
+<html lang="en">
+  <head>
+    <BaseHead
+      title={tag.toLowerCase().replace(/-/g, " ")}
+      description={`Tag archive for ${tag.toLowerCase().replace(/-/g, " ")}`}
+    />
+  </head>
+
+  <body class="dark:bg-slate-800 dark:text-white-50">
+    <Header />
+    <main>
+      <h1 class="text-3xl p-5">Tag: {tag.toLowerCase().replace(/-/g, " ")}</h1>
+
+      <!--List the array of astronaut info-->
+      <div
+        class="md:grid lg:grid-cols-3 md:grid-cols-2 md:gap-4 md:mx-auto text-lg"
+      >
+        {
+          page.data
+            .filter((blogPostEntry) => !blogPostEntry.data.draft)
+            .sort((a, b) => a.data.title.localeCompare(b.data.title))
+
+            .map((blogPostEntry) => (
+              <div class="relative p-3">
+                <Card
+                  url={`/${blogPostEntry.slug}`}
+                  img={blogPostEntry.data.heroImage.src}
+                  alt={blogPostEntry.data.heroImage.alt}
+                  title={blogPostEntry.data.title}
+                  footer=""
+                >
+                  <p class="m-5">{blogPostEntry.data.description}</p>
+                </Card>
+                <button>
+                  <a
+                    href={`/${blogPostEntry.slug}`}
+                    class="absolute hidden md:flex bottom-5 right-5 outline-1 outline-accent-900 mt-8 md:text-2xl p-2 text-black-900 bg-accent-400 rounded hover:rounded-xl hover:bg-accent-600"
+                  >
+                    Read More
+                  </a>
+                </button>
+              </div>
+            ))
+        }
+      </div>
+
+      <div class="flex justify-center m-5">
+        <Pagination
+          firstPage={page.url.prev ? "/blog" : null}
+          previousPage={page.url.prev ? page.url.prev : null}
+          nextPage={page.url.next ? page.url.next : null}
+          lastPage={page.url.next
+            ? `/blog/${Math.round(page.total / page.size)}`
+            : null}
+          currentPage={page.currentPage}
+          totalPages={Math.round(page.total / page.size)}
+        />
+      </div>
+    </main>
+    <Footer />
+  </body>
+</html>
