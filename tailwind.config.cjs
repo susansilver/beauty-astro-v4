@@ -20,7 +20,7 @@ module.exports = {
 		  },
 	
 		fontFamily: {
-		  sans: ['Arial', ...defaultTheme.fontFamily.sans],
+		  sans: ['Tahoma', 'Verdana', 'Geneva', ...defaultTheme.fontFamily.sans],
 		  display: ['"Poiret"', 'Arial', 'cursive'],
 		  logo: ['"Righteous"', 'Arial', 'cursive'],
 		  birthday: ['"Ouroboros"', 'Arial', 'cursive'],
