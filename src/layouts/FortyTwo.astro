@@ -40,14 +40,14 @@ const { frontmatter } = Astro.props;
           class="dark:bg-primary-200 dark:text-slate-900 bg-primary-200 text-black-900 p-20"
         >
           <h1
-            class="title flex justify-center place-items-center text-2xl lg:text-5xl text-center font-display"
+            class="title flex justify-center place-items-center text-2xl lg:text-5xl text-center font-display font-semibold"
             style="text-wrap: balance"
           >
             {frontmatter.title}
           </h1>
 
           <div
-            class="last-updated-on flex justify-center place-items-center text-xl lg:text-3xl"
+            class="last-updated-on flex justify-center place-items-center text-xl lg:text-3xl font-display font-bold"
           >
             Published on {frontmatter.pubDate}
           </div>

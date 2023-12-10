@@ -21,7 +21,7 @@ module.exports = {
 	
 		fontFamily: {
 		  sans: ['Arial', ...defaultTheme.fontFamily.sans],
-		  display: ['"Basteleur"', 'Arial', 'cursive'],
+		  display: ['"Poiret"', 'Arial', 'cursive'],
 		  logo: ['"Righteous"', 'Arial', 'cursive'],
 		  birthday: ['"Ouroboros"', 'Arial', 'cursive'],
 	  },

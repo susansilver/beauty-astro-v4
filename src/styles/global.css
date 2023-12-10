@@ -4,6 +4,13 @@
 
 
 @layer base {
+    @font-face {
+        font-family: 'Poiret';
+        src: url('/fonts/poiret-one-v16-latin-regular.woff2') format('woff2');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+    }
 
   @font-face {
     font-family: 'Ouroboros';
