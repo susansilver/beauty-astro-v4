@@ -1,24 +1,86 @@
 {
   "$schema": "https://frontmatter.codes/frontmatter.schema.json",
+  "frontMatter.framework.id": "astro",
+  "frontMatter.preview.host": "http://localhost:4321",
+  "frontMatter.content.supportedFileTypes": [
+    "mdx",
+    "md"
+  ],
   "frontMatter.taxonomy.contentTypes": [
     {
-      "name": "default",
+      "name": "articles",
       "pageBundle": false,
+      "previewPath": null,
+      "filePrefix": null,
+      "fileType": "mdx",
+      "template": "[[workspace]]/.frontmatter/templates/article.mdx",
       "fields": [
         {
-          "title": "layout",
-          "name": "layout",
-          "type": "string"
-        },
-        {
-          "title": "title",
+          "title": "Title",
           "name": "title",
           "type": "string"
         },
         {
-          "title": "description",
+          "title": "Description",
           "name": "description",
           "type": "string"
+        },
+        {
+          "title": "Publishing date",
+          "name": "date",
+          "type": "datetime",
+          "default": "{{now}}",
+          "isPublishDate": true
+        },
+        {
+          "title": "Updated date",
+          "name": "updatedDate",
+          "type": "datetime",
+          "dateFormat": "MMMM do, Y",
+          "default": "{{now}}",
+          "isModifiedDate": true
+        },
+        {
+          "title": "Hero Image",
+          "type": "fields",
+          "name": "heroImage",
+          "fields": [
+            {
+              "title": "Alt",
+              "name": "alt",
+              "type": "string"
+            },
+            {
+              "title": "Src",
+              "name": "src",
+              "type": "image"
+            }
+          ]
+        },
+        {
+          "title": "Thumbnail",
+          "name": "thumbnail",
+          "type": "image"
+        },
+        {
+          "title": "Tags",
+          "name": "tags",
+          "type": "tags"
+        },
+        {
+          "title": "Categories",
+          "name": "categories",
+          "type": "choice",
+          "choices": [
+            "cross-stitch",
+            "interviews",
+            "memories",
+            "science-communication",
+            "music",
+            "books-and-films",
+            "math-anxiety"
+          ],
+          "default": "memories"
         },
         {
           "title": "draft",
@@ -26,56 +88,10 @@
           "type": "draft"
         },
         {
-          "title": "pubDate",
-          "name": "pubDate",
-          "type": "datetime"
-        },
-        {
-          "title": "updatedDate",
-          "name": "updatedDate",
-          "type": "string"
-        },
-        {
-          "title": "heroImage",
-          "name": "heroImage",
-          "type": "fields",
-          "fields": [
-            {
-              "title": "alt",
-              "name": "alt",
-              "type": "string"
-            },
-            {
-              "title": "src",
-              "name": "src",
-              "type": "string"
-            }
-          ]
-        },
-        {
-          "title": "tags",
-          "name": "tags",
-          "type": "tags"
-        },
-        {
-          "title": "categories",
-          "name": "categories",
-          "type": "categories"
-        },
-        {
-          "title": "author",
+          "title": "Author",
           "name": "author",
-          "type": "string"
-        },
-        {
-          "title": "type",
-          "name": "type",
-          "type": "string"
-        },
-        {
-          "title": "thumbnail",
-          "name": "thumbnail",
-          "type": "string"
+          "type": "string",
+          "default": "susan-silver"
         }
       ]
     }

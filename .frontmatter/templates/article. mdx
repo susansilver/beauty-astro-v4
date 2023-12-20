@@ -1,0 +1,25 @@
+---
+layout:
+title:
+description:
+draft:
+pubDate:
+updatedDate:
+heroImage:
+  alt:
+  src:
+tags:
+categories:
+author:
+type:
+thumbnail:
+---
+
+import { YouTube } from '@astro-community/astro-embed-youtube';
+import BlockQuoteBook from '../../components/blog/BlockQuoteBook.astro';
+import BlockQuoteQuote from '../../components/blog/BlockQuoteQuote.astro';
+import AlignRight from '../../components/blog/AlignRight.astro';
+import AlignCenter from '../../components/blog/AlignCenter.astro';
+import BreakoutImage from '../../components/blog/BreakoutImage.astro';
+import Toc from '../../components/blog/Toc.astro';
+import { Image } from "astro:assets";
