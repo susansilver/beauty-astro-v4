@@ -8,12 +8,11 @@
   ],
   "frontMatter.taxonomy.contentTypes": [
     {
-      "name": "articles",
+      "name": "default",
       "pageBundle": false,
       "previewPath": null,
       "filePrefix": null,
       "fileType": "mdx",
-      "template": "[[workspace]]/.frontmatter/templates/article.mdx"
       "fields": [
         {
           "title": "Title",
@@ -95,5 +94,112 @@
         }
       ]
     }
-  ]
+  ],
+  "frontMatter.snippets.wrapper.enabled": false,
+  "frontMatter.content.snippets": {
+    "YouTube": {
+      "description": "Embed a YouTube Video",
+      "body": "<YouTube id=\"[[&selection]]\" />",
+      "fields": [
+        {
+          "name": "selection",
+          "title": "selection",
+          "type": "string",
+          "default": "FM_SELECTED_TEXT"
+        }
+      ]
+    },
+    "Add image as avif": {
+      "description": "",
+      "body": [
+        "import [[title]] from '../../assets[[&mediaUrl]]';",
+        "",
+        "<Image src={[[title]]} alt=\"[[alt]]\" format=\"avif\" quality=\"mid\" />"
+      ],
+      "isMediaSnippet": true
+    },
+    "Align Center": {
+      "description": "",
+      "body": [
+        "import [[title]] from '../../assets[[&mediaUrl]]';",
+        "",
+        "<AlignCenter src={[[title]]} alt=\"[[alt]]\" caption=\"[[caption]]\" />"
+      ],
+      "isMediaSnippet": true
+    },
+    "Align Right": {
+      "description": "",
+      "body": [
+        "import [[title]] from '../../assets[[&mediaUrl]]';",
+        "",
+        "<AlignRight src={[[title]]} alt=\"[[alt]]\" caption=\"[[caption]]\" />"
+      ],
+      "isMediaSnippet": true
+    },
+    "Align Left": {
+      "description": "",
+      "body": [
+        "import [[title]] from '../../assets[[&mediaUrl]]';",
+        "",
+        "<AlignLeft src={[[title]]} alt=\"[[alt]]\" caption=\"[[caption]]\" />"
+      ],
+      "isMediaSnippet": true
+    },
+    "Break Out Image": {
+      "description": "",
+      "body": [
+        "import [[title]] from '../../assets[[&mediaUrl]]';",
+        "<BreakoutImage src={[[title]]} alt=\"[[alt]]\" caption=\"[[caption]]\"/>"
+      ],
+      "isMediaSnippet": true
+    },
+    "Block Quote Quote": {
+      "description": "",
+      "body": [
+        "<BlockQuoteQuote cite=\"[[cite]]\">",
+        "[[text]]",
+        "</ BlockQuoteQuote>"
+      ],
+      "fields": [
+        {
+          "name": "cite",
+          "title": "cite",
+          "type": "string",
+          "single": true,
+          "default": ""
+        },
+        {
+          "name": "text",
+          "title": "text",
+          "type": "string",
+          "single": true,
+          "default": "FM_SELECTED_TEXT"
+        }
+      ]
+    },
+    "Block Quote Book": {
+      "description": "",
+      "body": [
+        "<BlockQuoteBook cite=\"[[cite]]\">",
+        "[[text]]",
+        "</BlockQuoteBook>"
+      ],
+      "fields": [
+        {
+          "name": "cite",
+          "title": "cite",
+          "type": "string",
+          "single": true,
+          "default": ""
+        },
+        {
+          "name": "text",
+          "title": "text",
+          "type": "string",
+          "single": true,
+          "default": "FM_SELECTED_TEXT"
+        }
+      ]
+    }
+  }
 }
