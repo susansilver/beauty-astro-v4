@@ -13,7 +13,14 @@
       "previewPath": null,
       "filePrefix": null,
       "fileType": "mdx",
+      "template": "[[workspace]]/.frontmatter/templates/article.mdx",
       "fields": [
+        {
+          "title": "Layout",
+          "name": "layout",
+          "type": "string",
+          "default": "../../layouts/BlogPostSingle.astro"
+        },
         {
           "title": "Title",
           "name": "title",
@@ -26,7 +33,7 @@
         },
         {
           "title": "Publishing date",
-          "name": "date",
+          "name": "pubDate",
           "type": "datetime",
           "default": "{{now}}",
           "isPublishDate": true
