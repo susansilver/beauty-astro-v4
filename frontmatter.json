@@ -13,7 +13,7 @@
       "previewPath": null,
       "filePrefix": null,
       "fileType": "mdx",
-      "template": "[[workspace]]/.frontmatter/templates/article.mdx",
+      "template": "[[workspace]]/.frontmatter/templates/article.mdx"
       "fields": [
         {
           "title": "Title",
