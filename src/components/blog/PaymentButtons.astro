@@ -14,7 +14,6 @@ this site going. You can also <a href="https://suzza.ck.page/4a324d3540">
 >
 
 <div id="tip-dropdown">
-  <a href="#">Venmo</a>
   <a href="#">PayPal</a>
   <a href="#">Ko-fi</a>
 </div>
@@ -46,12 +45,10 @@ this site going. You can also <a href="https://suzza.ck.page/4a324d3540">
   const tipDropdown = document.querySelector("#tip-dropdown");
   const links = tipDropdown.querySelectorAll("a");
 
-  links[0].href = `https://venmo.com/${username}`;
+  links[0].href = `https://paypal.me/${username}`;
   links[0].target = "_blank";
-  links[1].href = `https://paypal.me/${username}`;
+  links[1].href = `https://ko-fi.com/${username}`;
   links[1].target = "_blank";
-  links[2].href = `https://ko-fi.com/${username}`;
-  links[2].target = "_blank";
 
   tipButton.addEventListener("click", function () {
     tipDropdown.style.display =
