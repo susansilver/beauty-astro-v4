@@ -1,0 +1,212 @@
+{
+  "$schema": "https://frontmatter.codes/frontmatter.schema.json",
+  "frontMatter.framework.id": "astro",
+  "frontMatter.preview.host": "http://localhost:4321",
+  "frontMatter.content.supportedFileTypes": [
+    "mdx",
+    "md"
+  ],
+  "frontMatter.taxonomy.contentTypes": [
+    {
+      "name": "default",
+      "pageBundle": false,
+      "previewPath": null,
+      "filePrefix": null,
+      "fileType": "mdx",
+      "template": "[[workspace]]/.frontmatter/templates/article.mdx",
+      "fields": [
+        {
+          "title": "Layout",
+          "name": "layout",
+          "type": "string",
+          "default": "../../layouts/BlogPostSingle.astro"
+        },
+        {
+          "title": "Title",
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "title": "Description",
+          "name": "description",
+          "type": "string"
+        },
+        {
+          "title": "Publishing date",
+          "name": "pubDate",
+          "type": "datetime",
+          "default": "{{now}}",
+          "isPublishDate": true
+        },
+        {
+          "title": "Updated date",
+          "name": "updatedDate",
+          "type": "datetime",
+          "dateFormat": "MMMM do, Y",
+          "default": "{{now}}",
+          "isModifiedDate": true
+        },
+        {
+          "title": "Hero Image",
+          "type": "fields",
+          "name": "heroImage",
+          "fields": [
+            {
+              "title": "Alt",
+              "name": "alt",
+              "type": "string"
+            },
+            {
+              "title": "Src",
+              "name": "src",
+              "type": "image"
+            }
+          ]
+        },
+        {
+          "title": "Thumbnail",
+          "name": "thumbnail",
+          "type": "image"
+        },
+        {
+          "title": "Tags",
+          "name": "tags",
+          "type": "tags"
+        },
+        {
+          "title": "Categories",
+          "name": "categories",
+          "type": "choice",
+          "choices": [
+            "cross-stitch",
+            "interviews",
+            "memories",
+            "science-communication",
+            "music",
+            "books-and-films",
+            "math-anxiety"
+          ],
+          "default": "memories"
+        },
+        {
+          "title": "draft",
+          "name": "draft",
+          "type": "draft"
+        },
+        {
+          "title": "Author",
+          "name": "author",
+          "type": "string",
+          "default": "susan-silver"
+        }
+      ]
+    }
+  ],
+  "frontMatter.snippets.wrapper.enabled": false,
+  "frontMatter.content.snippets": {
+    "YouTube": {
+      "description": "Embed a YouTube Video",
+      "body": "<YouTube id=\"[[&selection]]\" />",
+      "fields": [
+        {
+          "name": "selection",
+          "title": "selection",
+          "type": "string",
+          "default": "FM_SELECTED_TEXT"
+        }
+      ]
+    },
+    "Add image as avif": {
+      "description": "",
+      "body": [
+        "import [[title]] from '../../assets[[&mediaUrl]]';",
+        "",
+        "<Image src={[[title]]} alt=\"[[alt]]\" format=\"avif\" quality=\"mid\" />"
+      ],
+      "isMediaSnippet": true
+    },
+    "Align Center": {
+      "description": "",
+      "body": [
+        "import [[title]] from '../../assets[[&mediaUrl]]';",
+        "",
+        "<AlignCenter src={[[title]]} alt=\"[[alt]]\" caption=\"[[caption]]\" />"
+      ],
+      "isMediaSnippet": true
+    },
+    "Align Right": {
+      "description": "",
+      "body": [
+        "import [[title]] from '../../assets[[&mediaUrl]]';",
+        "",
+        "<AlignRight src={[[title]]} alt=\"[[alt]]\" caption=\"[[caption]]\" />"
+      ],
+      "isMediaSnippet": true
+    },
+    "Align Left": {
+      "description": "",
+      "body": [
+        "import [[title]] from '../../assets[[&mediaUrl]]';",
+        "",
+        "<AlignLeft src={[[title]]} alt=\"[[alt]]\" caption=\"[[caption]]\" />"
+      ],
+      "isMediaSnippet": true
+    },
+    "Break Out Image": {
+      "description": "",
+      "body": [
+        "import [[title]] from '../../assets[[&mediaUrl]]';",
+        "<BreakoutImage src={[[title]]} alt=\"[[alt]]\" caption=\"[[caption]]\"/>"
+      ],
+      "isMediaSnippet": true
+    },
+    "Block Quote Quote": {
+      "description": "",
+      "body": [
+        "<BlockQuoteQuote cite=\"[[cite]]\">",
+        "[[text]]",
+        "</ BlockQuoteQuote>"
+      ],
+      "fields": [
+        {
+          "name": "cite",
+          "title": "cite",
+          "type": "string",
+          "single": true,
+          "default": ""
+        },
+        {
+          "name": "text",
+          "title": "text",
+          "type": "string",
+          "single": true,
+          "default": "FM_SELECTED_TEXT"
+        }
+      ]
+    },
+    "Block Quote Book": {
+      "description": "",
+      "body": [
+        "<BlockQuoteBook cite=\"[[cite]]\">",
+        "[[text]]",
+        "</BlockQuoteBook>"
+      ],
+      "fields": [
+        {
+          "name": "cite",
+          "title": "cite",
+          "type": "string",
+          "single": true,
+          "default": ""
+        },
+        {
+          "name": "text",
+          "title": "text",
+          "type": "string",
+          "single": true,
+          "default": "FM_SELECTED_TEXT"
+        }
+      ]
+    }
+  }
+}
