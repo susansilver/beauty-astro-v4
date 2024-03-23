@@ -12,24 +12,23 @@
       style="transform: ;msFilter:;"><path d="m11.998 17 7-8h-14z"></path></svg
     > Table of Contents</button
   >
-
-  <section>
-    <div id="tocList" class="hidden" aria-labelledby="tocButton">
-      <slot />
-    </div>
-    <!--  <a href="#comment-box"><button class="btn">Skip to Comments</button></a> -->
-  </section>
-
-  <script>
-    const tocButton = document.getElementById("tocButton");
-    const tocList = document.getElementById("tocList");
-
-    tocButton.addEventListener("click", () => {
-      tocList.classList.toggle("hidden");
-      tocButton.setAttribute(
-        "aria-expanded",
-        tocList.classList.contains("hidden") ? "false" : "true"
-      );
-    });
-  </script>
 </h2>
+<section>
+  <div id="tocList" class="hidden" aria-labelledby="tocButton">
+    <slot />
+  </div>
+  <!--  <a href="#comment-box"><button class="btn">Skip to Comments</button></a> -->
+</section>
+
+<script>
+  const tocButton = document.getElementById("tocButton");
+  const tocList = document.getElementById("tocList");
+
+  tocButton.addEventListener("click", () => {
+    tocList.classList.toggle("hidden");
+    tocButton.setAttribute(
+      "aria-expanded",
+      tocList.classList.contains("hidden") ? "false" : "true"
+    );
+  });
+</script>
