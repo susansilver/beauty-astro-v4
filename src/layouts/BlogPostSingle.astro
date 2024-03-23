@@ -60,13 +60,13 @@ const { frontmatter, headings } = Astro.props;
           <li>
             Author: <a
               href=`/authors/${frontmatter.author}`
-              class="hover:text-black-900"
+              class="hover:text-black-900 underline"
               >{frontmatter.author.toLowerCase().replace(/-/g, " ")}</a
             >
           </li>
           <li>
             Category: <a
-              class="hover:text-black-900"
+              class="hover:text-black-900 underline"
               href={`/category/${frontmatter.categories}`}
               >{frontmatter.categories.toLowerCase().replace(/-/g, " ")}</a
             >
@@ -75,7 +75,10 @@ const { frontmatter, headings } = Astro.props;
             Tags: {
               frontmatter.tags.map((tag, index) => (
                 <span>
-                  <a class="hover:text-black-900" href={`/tag/${tag}`}>
+                  <a
+                    class="hover:text-black-900 underline"
+                    href={`/tag/${tag}`}
+                  >
                     {tag.toLowerCase().replace(/-/g, " ")}
                   </a>
                   {index === frontmatter.tags.length - 1 ? "" : ","}
