@@ -207,6 +207,54 @@
           "default": "FM_SELECTED_TEXT"
         }
       ]
+    },
+    "Related Articles": {
+      "description": "",
+      "body": "<RelatedArticles oneTitle=\"[[oneTitle]]\" oneURL=\"/[[oneURL]]\" twoTitle=\"[[twoTitle]]\" twoURL=\"/[[twoURL]]\" threeTitle=\"[[threeTitle]]\" threeURL=\"/[[threeURL]]\" ",
+      "fields": [
+        {
+          "name": "oneTitle",
+          "title": "oneTitle",
+          "type": "string",
+          "single": true,
+          "default": ""
+        },
+        {
+          "name": "oneURL",
+          "title": "oneURL",
+          "type": "string",
+          "single": true,
+          "default": ""
+        },
+        {
+          "name": "twoTitle",
+          "title": "twoTitle",
+          "type": "string",
+          "single": true,
+          "default": ""
+        },
+        {
+          "name": "twoURL",
+          "title": "twoURL",
+          "type": "string",
+          "single": true,
+          "default": ""
+        },
+        {
+          "name": "threeTitle",
+          "title": "threeTitle",
+          "type": "string",
+          "single": true,
+          "default": ""
+        },
+        {
+          "name": "threeURL",
+          "title": "threeURL",
+          "type": "string",
+          "single": true,
+          "default": ""
+        }
+      ]
     }
   }
 }
