@@ -10,18 +10,18 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astro-community/astro-embed-youtube": "^0.4.4",
-    "@astrojs/check": "^0.5.9",
-    "@astrojs/mdx": "^2.2.0",
+    "@astro-community/astro-embed-youtube": "^0.5.1",
+    "@astrojs/check": "^0.5.10",
+    "@astrojs/mdx": "^2.2.4",
     "@astrojs/rss": "^4.0.5",
-    "@astrojs/sitemap": "^3.1.1",
+    "@astrojs/sitemap": "^3.1.2",
     "@astrojs/tailwind": "^5.1.0",
-    "astro": "^4.5.4",
-    "tailwindcss": "^3.4.1",
-    "typescript": "^5.4.2"
+    "astro": "^4.5.16",
+    "tailwindcss": "^3.4.3",
+    "typescript": "^5.4.4"
   },
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.10",
+    "@tailwindcss/typography": "^0.5.12",
     "accessible-astro-components": "^2.3.5"
   }
 }
