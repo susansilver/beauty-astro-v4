@@ -210,7 +210,7 @@
     },
     "Related Articles": {
       "description": "",
-      "body": "<RelatedArticles oneTitle=\"[[oneTitle]]\" oneURL=\"/[[oneURL]]\" twoTitle=\"[[twoTitle]]\" twoURL=\"/[[twoURL]]\" threeTitle=\"[[threeTitle]]\" threeURL=\"/[[threeURL]]\" ",
+      "body": "<RelatedArticles oneTitle=\"[[oneTitle]]\" oneURL=\"/[[oneURL]]\" twoTitle=\"[[twoTitle]]\" twoURL=\"/[[twoURL]]\" threeTitle=\"[[threeTitle]]\" threeURL=\"/[[threeURL]]\"  />",
       "fields": [
         {
           "name": "oneTitle",
