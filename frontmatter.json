@@ -8,12 +8,106 @@
   ],
   "frontMatter.taxonomy.contentTypes": [
     {
-      "name": "default",
+      "name": "article",
       "pageBundle": false,
       "previewPath": null,
       "filePrefix": null,
       "fileType": "mdx",
       "template": "[[workspace]]/.frontmatter/templates/article.mdx",
+      "fields": [
+        {
+          "title": "Layout",
+          "name": "layout",
+          "type": "string",
+          "default": "../../layouts/BlogPostSingle.astro"
+        },
+        {
+          "title": "Title",
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "title": "Description",
+          "name": "description",
+          "type": "string"
+        },
+        {
+          "title": "Publishing date",
+          "name": "pubDate",
+          "type": "datetime",
+          "default": "{{now}}",
+          "isPublishDate": true
+        },
+        {
+          "title": "Updated date",
+          "name": "updatedDate",
+          "type": "datetime",
+          "dateFormat": "MMMM do, Y",
+          "default": "{{now}}",
+          "isModifiedDate": true
+        },
+        {
+          "title": "Hero Image",
+          "type": "fields",
+          "name": "heroImage",
+          "fields": [
+            {
+              "title": "Alt",
+              "name": "alt",
+              "type": "string"
+            },
+            {
+              "title": "Src",
+              "name": "src",
+              "type": "image"
+            }
+          ]
+        },
+        {
+          "title": "Thumbnail",
+          "name": "thumbnail",
+          "type": "image"
+        },
+        {
+          "title": "Tags",
+          "name": "tags",
+          "type": "tags"
+        },
+        {
+          "title": "Categories",
+          "name": "categories",
+          "type": "choice",
+          "choices": [
+            "cross-stitch",
+            "interviews",
+            "memories",
+            "science-communication",
+            "music",
+            "books-and-films",
+            "math-anxiety"
+          ],
+          "default": "memories"
+        },
+        {
+          "title": "draft",
+          "name": "draft",
+          "type": "draft"
+        },
+        {
+          "title": "Author",
+          "name": "author",
+          "type": "string",
+          "default": "susan-silver"
+        }
+      ]
+    },
+    {
+      "name": "numberphile",
+      "pageBundle": false,
+      "previewPath": null,
+      "filePrefix": null,
+      "fileType": "mdx",
+      "template": "[[workspace]]/.frontmatter/templates/annotated-numberphile.mdx",
       "fields": [
         {
           "title": "Layout",
